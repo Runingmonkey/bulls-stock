@@ -10,6 +10,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hateoas-order</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.itcast.trade</groupId>
+            <artifactId>hateoas-order</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 
 </project>
