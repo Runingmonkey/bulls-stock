@@ -1,9 +1,33 @@
 package com.itcast.hateoas.stocks.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * @author mike ling
  * @description
- * @date 2021/1/18 17:05
+ * @date 2021/1/18 17:03
  */
-public class BaseEntity {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@MappedSuperclass
+public class BaseEntity implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(updatable = false)
+    @CreationTimestamp
+    private Date createTime;
+
+    @UpdateTimestamp
+    private Date updateTime;
 }
